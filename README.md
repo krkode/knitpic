@@ -2,9 +2,8 @@
 converts a picture to a knitting chart
 
 # TODO
-EZ - host as website on github
-EZ - take picture as input
-EZ - convert picture to color chart
+EZ - create chart
+MED - convert picture to color chart
 EZ - display gridlines and row numbers
 ADV - allow picture to be simplified
 EZ - allow chart to be downloaded as pdf
