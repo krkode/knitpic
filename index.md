@@ -23,7 +23,8 @@
         <p>Convert jpeg or png into customisable knitting chart and remember how to write javascript somewhere along the way</p>
         <input type="file" accept="image/*" onchange="generate_chart(event)">
         <img id="input_image">
-        <div id="knit_chart"></div>
+        <table id="knit_chart">
+        </table>
       </article>
     </main>
 
