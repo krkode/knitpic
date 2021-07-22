@@ -5,49 +5,22 @@ function generate_chart(event){
   input.addEventListener('load', function(load_event){
     var image = load_event.target;
     //add_gridlines(image);
-    var context = init_context(image);
-    var simplified = simplify_image(image,context);
+    var canvas = init_canvas(image);
+    var context = canvas.getContext('2d');
+    context.drawImage(image, 0, 0, canvas.width, canvas.height);
 
   });
   preview_image(input, event);
 }
 
 function init_canvas(image){
-  var canvas = document.createElement('canvas');
-  canvas.width = image.width;
-  canvas.height = image.height;
+  var canvas = document.getElementById('knit_chart');
+  var chart_width = document.getElementById('chart_width').value;
+  canvas.width = chart_width;
+  canvas.height = image.height * (chart_width/image.width);
   return canvas;
 }
 
-function init_context(image){
-  var canvas = init_canvas(image);
-  var context = canvas.getContext('2d');
-
-  context.drawImage(image, 0, 0, canvas.width, canvas.height);
-
-  return context;
-}
-
-function simplify_image(image, context){
-  var simplified = [];
-  //var width = ~~image.width/10;
-  //x top
-  var sx = 0
-  //y top
-  var sy = 0
-  //width of section
-  var sw = 10
-  //length of section
-  var sh = 10
-  var simp = context.getImageData(sx,sy ,sw,sh);
-  // for(var i=1;i<=image.height;i++){
-  //   var simp = context.getImageData(sx,sy ,sw,sh);
-  //   simplified.push(average_color(simp))
-  // }
-  
-  alert(simp);
-  return simp;
-}
 // most common color from the pixels in given coordinate range
 function common_color(x1, x2, y1, y2){
   var color = context.getImageData(X, Y, 1, 1).data;
