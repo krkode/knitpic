@@ -8,6 +8,7 @@ function generate_chart(event){
     var canvas = init_canvas(image);
     var context = canvas.getContext('2d');
     context.drawImage(image, 0, 0, canvas.width, canvas.height);
+    create_key(context, canvas.width, canvas.height);
 
   });
   preview_image(input, event);

@@ -4,6 +4,7 @@
 
     <title>Landing Page</title>
   <script src="generate_chart.js"></script> 
+  <script src="create_color_histogram.js"></script> 
   <link rel="stylesheet" type="text/css" href="main.css">
   </head>
 
