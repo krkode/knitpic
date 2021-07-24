@@ -28,6 +28,7 @@
         <img id="input_image">
         <canvas id="knit_chart">
         </canvas>
+        <table id="color_legend"></table>
       </article>
     </main>
 
