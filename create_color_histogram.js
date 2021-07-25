@@ -8,7 +8,7 @@ function create_key(context, width, height){
     for(var y=0; y < height;++y){
         for(var x=0; x < width; ++x){
             var color = 'rgb('+data[count] +','+ data[count+1] +','+ data[count+2]+ ')';
-            var coordinates = [x,y];
+            var coordinates = x.toString()+','+y.toString();
             if (color in key){
                 key[color].push(coordinates);
             }
@@ -29,7 +29,7 @@ function display_key(key){
     count = 0;
     for (const [color, value] of Object.entries(key)) {
         body += '<tr>';
-        body += '<td><div class="key_entry" style="background-color:'+ color + '"></div></td>';
+        body += '<td style="background-color:'+ color + '"></td>';
         body += '<td>'+ count.toString() +'</td>';
         body += '<td>' + value.length.toString() + '</td>';
         body += '</tr>';

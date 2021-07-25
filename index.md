@@ -29,6 +29,7 @@
         <canvas id="knit_chart">
         </canvas>
         <table id="color_legend"></table>
+        <table id="color_chart"></table>
       </article>
     </main>
 

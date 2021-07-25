@@ -4,12 +4,12 @@ function generate_chart(event){
   var input = document.getElementById('input_image');
   input.addEventListener('load', function(load_event){
     var image = load_event.target;
-    //add_gridlines(image);
     var canvas = init_canvas(image);
     var context = canvas.getContext('2d');
     context.drawImage(image, 0, 0, canvas.width, canvas.height);
-    create_key(context, canvas.width, canvas.height);
-
+    var key = create_key(context, canvas.width, canvas.height);
+    var color_chart = document.getElementById('color_chart');
+    generate_grid(color_chart, canvas.width, canvas.height, key);
   });
   preview_image(input, event);
 }
@@ -34,18 +34,28 @@ function preview_image(input, event) {
     reader.readAsDataURL(event.target.files[0]);
   }
 
-function add_gridlines(image){
-  var x = ~~image.clientWidth/10;
-  var y = ~~image.clientHeight/10;
-
-  var chart = document.getElementById('knit_chart');
+function generate_grid(color_chart,x, y, key){
   var table = '<table cellspacing="0" cellpadding="10px">';
-      for(var i=1;i<=y;i++){
+      for(var iy=0;iy<=y;iy++){
           table += '<tr>';
-          table += '<td></td>'.repeat(x);
+          for(var ix=0;ix<=x;ix++){
+            table += '<td id="'+ix.toString()+','+iy.toString()+'"></td>';
+          }
           table += '</tr>';
       }
       table += '</table>';
   
-  chart.innerHTML = table;
+  color_chart.innerHTML = table;
+  color_grid(key);
+}
+
+function color_grid(key){
+  //TODO: should i just move this functionality to create_color_histogram.display_key cause key is being iterated over there anyway? and like web shit values speed over readability no?
+  for (const [color, value] of Object.entries(key)){
+    for (const coordinate of value){
+      var cell = document.getElementById(coordinate);
+      cell.style.backgroundColor = color;
+    }
+  }
+  
 }
