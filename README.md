@@ -3,7 +3,7 @@ converts a picture to a knitting chart
 
 # TODO
 MED - probably should start making test cases now
-EZ/MED - label each square which will need key to include the id of each color or maybe make like a lookup with color to id hmmm
+MED - reconsider key structure. idk if id should be an attribute, does nesting dictionaries make it too complicated? would a lookup table be better?
 EZ - if image is smaller than width allow scale up functionality too
 MED - convert picture to color chart
 EZ - display gridlines and row numbers + major quadrants

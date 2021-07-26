@@ -52,9 +52,10 @@ function generate_grid(color_chart,x, y, key){
 function color_grid(key){
   //TODO: should i just move this functionality to create_color_histogram.display_key cause key is being iterated over there anyway? and like web shit values speed over readability no?
   for (const [color, value] of Object.entries(key)){
-    for (const coordinate of value){
+    for (const coordinate of value["coordinates"]){
       var cell = document.getElementById(coordinate);
       cell.style.backgroundColor = color;
+      cell.innerHTML = value["id"];
     }
   }
   
