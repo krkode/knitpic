@@ -36,13 +36,22 @@ function preview_image(input, event) {
 
 function generate_grid(color_chart,x, y, key){
   var table = '<table cellspacing="0" cellpadding="10px">';
-      for(var iy=0;iy<=y;iy++){
+      for(var iy=0;iy<y;iy++){
           table += '<tr>';
-          for(var ix=0;ix<=x;ix++){
+          for(var ix=0;ix<x;ix++){
             table += '<td id="'+ix.toString()+','+iy.toString()+'"></td>';
           }
+          //y grid coordinates
+          table += '<td>'+(y-iy).toString()+'</td>';//TODO since ive used iy.toString 3 times now, would it be better it declare var in loop? or is the difference miniscule?
           table += '</tr>';
       }
+      // TODO: this feels sloppy like we just looped up there why we repeating here
+      // x grid coordinates
+      table += '<tr>';
+      for(var ix=1;ix<=x;ix++){
+        table += '<td>'+ix.toString()+'</td>';
+      }
+      table += '</tr>';
       table += '</table>';
   
   color_chart.innerHTML = table;
