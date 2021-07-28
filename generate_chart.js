@@ -1,5 +1,5 @@
 'use strict';
-
+var KEY = []
 function generate_chart(event){
   var input = document.getElementById('input_image');
   input.addEventListener('load', function(load_event){
@@ -8,14 +8,23 @@ function generate_chart(event){
     var context = canvas.getContext('2d');
     context.drawImage(image, 0, 0, canvas.width, canvas.height);
     var key = create_key(context, canvas.width, canvas.height);
-    var color_chart = document.getElementById('color_chart');
-    generate_grid(color_chart, canvas.width, canvas.height, key);
+    KEY = key;
+    generate_grid(key);
+  });
+  var display_color = document.getElementById('display_color');
+  display_color.addEventListener('change', function(){
+    //TODO: make this not so wasteful, like no need to regenerate just remove colors and add em back bra
+    if (this.checked) {
+      color_grid(KEY);//TODO: eek global var thats no good, look up how to change
+    } else {
+      generate_grid(KEY);//TODO: eek global var thats no good, look up how to change
+    }
   });
   preview_image(input, event);
 }
 
 function init_canvas(image){
-  var canvas = document.getElementById('knit_chart');
+  var canvas = document.getElementById('scaled_input');
   var chart_width = document.getElementById('chart_width').value;
   canvas.width = chart_width;
   canvas.height = image.height * (chart_width/image.width);
@@ -34,7 +43,11 @@ function preview_image(input, event) {
     reader.readAsDataURL(event.target.files[0]);
   }
 
-function generate_grid(color_chart,x, y, key){
+function generate_grid(key){
+  var color_chart = document.getElementById('color_chart');
+  var scaled_input = document.getElementById('scaled_input');
+  var x = scaled_input.width;
+  var y = scaled_input.height;
   var table = '<table cellspacing="0" cellpadding="10px">';
       for(var iy=0;iy<y;iy++){
           table += '<tr>';
@@ -54,8 +67,19 @@ function generate_grid(color_chart,x, y, key){
       table += '</tr>';
       table += '</table>';
   
+  color_chart.innerHTML = '';
   color_chart.innerHTML = table;
-  color_grid(key);
+  label_grid_cells(key);
+}
+
+function label_grid_cells(key){
+  for (const [color, value] of Object.entries(key)){
+    for (const coordinate of value["coordinates"]){
+      var cell = document.getElementById(coordinate);
+      cell.innerHTML = value["id"];
+    }
+  }
+  
 }
 
 function color_grid(key){
@@ -64,7 +88,6 @@ function color_grid(key){
     for (const coordinate of value["coordinates"]){
       var cell = document.getElementById(coordinate);
       cell.style.backgroundColor = color;
-      cell.innerHTML = value["id"];
     }
   }
   
