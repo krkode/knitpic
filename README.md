@@ -6,7 +6,9 @@ ADV - browser compatibility is gonna be a problem sooner than i thought. if i us
 MED - make the color of the cell label contrast to the cell color, like what if i have a black cell and black text?
 EZ - allow the user to turn the colors off and on in the chart as well VIA TOGGLE BUTTON with text
 (its a checkbox for now)
-EZ - color should be checked by default
+EZ - lookup standard practice for global vars in javascript cause KEY is making me insecure like we neeeever resort to such vile practices
+EZ - also callback violates clean code according to the chapter i JUST read so think if there are any better solutions
+EZ - refactor: split the color stuff out into separate js file AND name everything better
 MED - probably should start making test cases now
 MED - reconsider key structure. idk if id should be an attribute, does nesting dictionaries make it too complicated? would a lookup table be better?
 EZ - display major quadrants

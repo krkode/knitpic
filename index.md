@@ -31,9 +31,9 @@
         <canvas id="scaled_input"></canvas>
 
         <table id="color_legend"></table>
-        <input type="checkbox" id="display_color">
+        <input type="checkbox" id="display_color" checked>
           <label for="display_color"> Display Chart Colors</label>
-        <table id="color_chart"></table>
+        <table id="knit_chart"></table>
       </article>
     </main>
 

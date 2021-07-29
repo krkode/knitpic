@@ -9,16 +9,13 @@ function generate_chart(event){
     context.drawImage(image, 0, 0, canvas.width, canvas.height);
     var key = create_key(context, canvas.width, canvas.height);
     KEY = key;
-    generate_grid(key);
+    var display_color = document.getElementById('display_color');
+    generate_grid(key, function(){
+      apply_color_preference(display_color.checked);
+    });
   });
-  var display_color = document.getElementById('display_color');
   display_color.addEventListener('change', function(){
-    //TODO: make this not so wasteful, like no need to regenerate just remove colors and add em back bra
-    if (this.checked) {
-      color_grid(KEY);//TODO: eek global var thats no good, look up how to change
-    } else {
-      generate_grid(KEY);//TODO: eek global var thats no good, look up how to change
-    }
+    apply_color_preference(this.checked);
   });
   preview_image(input, event);
 }
@@ -43,8 +40,8 @@ function preview_image(input, event) {
     reader.readAsDataURL(event.target.files[0]);
   }
 
-function generate_grid(key){
-  var color_chart = document.getElementById('color_chart');
+function generate_grid(key, callback){
+  var knit_chart = document.getElementById('knit_chart');
   var scaled_input = document.getElementById('scaled_input');
   var x = scaled_input.width;
   var y = scaled_input.height;
@@ -67,9 +64,10 @@ function generate_grid(key){
       table += '</tr>';
       table += '</table>';
   
-  color_chart.innerHTML = '';
-  color_chart.innerHTML = table;
+  knit_chart.innerHTML = '';
+  knit_chart.innerHTML = table;
   label_grid_cells(key);
+  callback();
 }
 
 function label_grid_cells(key){
@@ -82,6 +80,14 @@ function label_grid_cells(key){
   
 }
 
+function remove_colors_from_grid(key){
+  for (const [color, value] of Object.entries(key)){
+    for (const coordinate of value["coordinates"]){
+      var cell = document.getElementById(coordinate);
+      cell.style.backgroundColor = "";
+    }
+  }
+}
 function color_grid(key){
   //TODO: should i just move this functionality to create_color_histogram.display_key cause key is being iterated over there anyway? and like web shit values speed over readability no?
   for (const [color, value] of Object.entries(key)){
@@ -91,4 +97,12 @@ function color_grid(key){
     }
   }
   
+}
+
+function apply_color_preference(display_color_checked){
+  if (display_color_checked) {
+    color_grid(KEY);//TODO: eek global var thats no good, look up how to change
+  } else {
+    remove_colors_from_grid(KEY);//TODO: eek global var thats no good, look up how to change
+  }
 }
