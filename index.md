@@ -32,7 +32,10 @@
 
         <table id="color_legend"></table>
         <input type="checkbox" id="display_color" checked>
-          <label for="display_color"> Display Chart Colors</label>
+          <label for="display_color"> Display Chart Colors</label><br>
+
+        <label for="knit_chart_cell_size">Move slider to change Knitting Chart size</label>
+        <input type="range" id="knit_chart_padding" min="1" max="50" value="15">
         <table id="knit_chart"></table>
       </article>
     </main>

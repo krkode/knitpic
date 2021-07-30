@@ -17,6 +17,12 @@ function generate_chart(event){
   display_color.addEventListener('change', function(){
     apply_color_preference(this.checked);
   });
+  var knit_chart_padding = document.getElementById('knit_chart_padding');
+  knit_chart_padding.addEventListener('change', function(){
+    var knit_chart = document.getElementById('knit_chart');
+    var knit_chart_cells = knit_chart.querySelectorAll('td');
+    knit_chart_cells.forEach(cell => cell.style.padding = knit_chart_padding.value.toString() + 'px');
+  })
   preview_image(input, event);
 }
 
@@ -45,7 +51,7 @@ function generate_grid(key, callback){
   var scaled_input = document.getElementById('scaled_input');
   var x = scaled_input.width;
   var y = scaled_input.height;
-  var table = '<table cellspacing="0" cellpadding="10px">';
+  var table = '<table>';
       for(var iy=0;iy<y;iy++){
           table += '<tr>';
           for(var ix=0;ix<x;ix++){
