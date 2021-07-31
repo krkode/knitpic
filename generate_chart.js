@@ -55,7 +55,11 @@ function generate_grid(key, callback){
       for(var iy=1;iy<=y;iy++){
           table += '<tr>';
           for(var ix=1;ix<=x;ix++){
-            table += '<td id="'+ix.toString()+','+iy.toString()+'"></td>';
+            table += '<td id="'+ix.toString()+','+iy.toString()+'"';
+            if ((ix%10===0)||(iy%10===0)){
+              table += 'class="bold_td"'
+            }
+            table += '></td>';
           }
           //y grid coordinates
           table += '<td>'+(1+y-iy).toString()+'</td>';
