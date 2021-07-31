@@ -2,6 +2,8 @@
 converts a picture to a knitting chart
 
 # TODO
+EZ - enforce valid number put into number field before browse button is enabled
+EZ - flip x axis with a button u know cause when u start knitting ws the numbers change? should i not? idk
 ADV - browser compatibility is gonna be a problem sooner than i thought. if i use webkit then itll only work in safari and chrome. after basic functionality is done, test in a couple of browers
 MED - make the color of the cell label contrast to the cell color, like what if i have a black cell and black text?
 EZ - allow the user to turn the colors off and on in the chart as well VIA TOGGLE BUTTON with text
