@@ -26,6 +26,15 @@ function generate_chart(event){
   preview_image(input, event);
 }
 
+function enable_browse(event){
+    var widthInput = document.getElementById('chart_width').value;
+    if (widthInput != "") {
+        document.getElementById('browse').removeAttribute("disabled");
+    } else {
+        document.getElementById('browse').setAttribute("disabled", null);
+    }
+}
+
 function init_canvas(image){
   var canvas = document.getElementById('scaled_input');
   var chart_width = document.getElementById('chart_width').value;

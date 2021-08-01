@@ -24,8 +24,8 @@
         <p>Convert jpeg or png into customisable knitting chart</p>
         
         <label for="chart_width">Width(number of stitches):</label>
-        <input type="number" id="chart_width" name="chart_width" value=30>
-        <input type="file" accept="image/*" onchange="generate_chart(event)">
+        <input type="number" id="chart_width" name="chart_width" onkeyup="enable_browse(event)">
+        <input type="file" id="browse" disabled accept="image/*" onchange="generate_chart(event)">
 
         <img id="input_image">
         <canvas id="scaled_input"></canvas>
