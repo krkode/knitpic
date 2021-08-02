@@ -13,10 +13,8 @@ EZ - also callback violates clean code according to the chapter i JUST read so t
 EZ - refactor: split the color stuff out into separate js file AND name everything better
 MED - probably should start making test cases now
 MED - reconsider key structure. idk if id should be an attribute, does nesting dictionaries make it too complicated? would a lookup table be better?
-EZ - display major quadrants
 EZ - allow chart to be downloaded as file (pdf or image i dont care)
 EZ - hover over cell in grid to view coordinates
-MED - view Y coordinates on either side of chart (even on one side, odd on other)
 MED - allow user to put marker in the last row they were on
 ADV - allow user to save chart and come back to site, upload working chart (including legend) and keep going/adjust. Did someone say injection attacked?!?!
 ADV - allow user to change selected colors

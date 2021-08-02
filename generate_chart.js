@@ -63,6 +63,8 @@ function generate_grid(key, callback){
   var table = '<table>';
       for(var iy=1;iy<=y;iy++){
           table += '<tr>';
+          //y grid coordinates
+          table += '<td>'+(1+y-iy).toString()+'</td>';
           for(var ix=1;ix<=x;ix++){
             table += '<td id="'+ix.toString()+','+iy.toString()+'"';
             if ((ix%10===0)||(iy%10===0)){
@@ -77,9 +79,12 @@ function generate_grid(key, callback){
       // TODO: this feels sloppy like we just looped up there why we repeating here
       // x grid coordinates
       table += '<tr>';
+      //trying to push x axis markers tot he left by 1
+      table +='<td></td>';
       for(var ix=1;ix<=x;ix++){
         table += '<td>'+ix.toString()+'</td>';
       }
+      table +='<td></td>';
       table += '</tr>';
       table += '</table>';
   

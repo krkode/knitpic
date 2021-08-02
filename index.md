@@ -40,8 +40,6 @@
       </article>
     </main>
 
-    <!-- And here is our main footer that is used across all the pages of our website -->
-
     <footer>
       <p>Happy knitting</p>
     </footer>
