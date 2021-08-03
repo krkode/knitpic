@@ -22,20 +22,29 @@
       <article>
         <h2>Description</h2>
         <p>Convert jpeg or png into customisable knitting chart</p>
-        
+      </article>
+      
+      <article>
         <label for="chart_width">Width(number of stitches):</label>
         <input type="number" id="chart_width" name="chart_width" onkeyup="enable_browse(event)">
         <input type="file" id="browse" disabled accept="image/*" onchange="generate_chart(event)">
+      </article>
 
+      <article>
         <img id="input_image">
         <canvas id="scaled_input" width=0 height=0></canvas>
+      </article>
 
+      <article>
         <table id="color_legend"></table>
         <input type="checkbox" id="display_color" checked>
           <label for="display_color"> Display Chart Colors</label><br>
 
         <label for="knit_chart_cell_size">Move slider to change Knitting Chart size</label>
         <input type="range" id="knit_chart_padding" min="1" max="50" value="15">
+      </article>
+      
+      <article>
         <table id="knit_chart"></table>
       </article>
     </main>
