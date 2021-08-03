@@ -28,7 +28,7 @@
         <input type="file" id="browse" disabled accept="image/*" onchange="generate_chart(event)">
 
         <img id="input_image">
-        <canvas id="scaled_input"></canvas>
+        <canvas id="scaled_input" width=0 height=0></canvas>
 
         <table id="color_legend"></table>
         <input type="checkbox" id="display_color" checked>
