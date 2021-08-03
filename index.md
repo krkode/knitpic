@@ -41,7 +41,7 @@
           <label for="display_color"> Display Chart Colors</label><br>
 
         <label for="knit_chart_cell_size">Move slider to change Knitting Chart size</label>
-        <input type="range" id="knit_chart_padding" min="1" max="50" value="15">
+        <input type="range" id="knit_chart_padding" min="1" max="50" value="1">
       </article>
       
       <article>
