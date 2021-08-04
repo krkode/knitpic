@@ -2,10 +2,15 @@
 converts a picture to a knitting chart
 
 # TODO
+<<<<<<< HEAD
 BUG - knit chart size slider isn't taken into account until after chart is generated so user might change it befor they upload pic and it says 50 but then when the pic is transformed its just 1
 REFACTOR - split into different pages maybe? or collapse edits article at the start so i dont have to deal with the above bug
 EZ - consider removing original image like what good is it doing there? having different pages would fix that by the way
 MED - flip work feature oooo do i generate chart again? have a hidden flipped copy that watches all the changes? becomes visible when flip is selected?
+=======
+EZ - idk if this is antijavascriptic but make a class and an instance for each cell in the table so the coordinates can be correct and the color can be changed easier and set easier 
+EZ - flip x axis with a button u know cause when u start knitting ws the numbers change? should i not? idk
+>>>>>>> main
 ADV - browser compatibility is gonna be a problem sooner than i thought. if i use webkit then itll only work in safari and chrome. after basic functionality is done, test in a couple of browers
 MED - make the color of the cell label contrast to the cell color, like what if i have a black cell and black text?
 EZ - allow the user to turn the colors off and on in the chart as well VIA TOGGLE BUTTON with text
@@ -16,7 +21,6 @@ EZ - refactor: split the color stuff out into separate js file AND name everythi
 MED - probably should start making test cases now
 MED - reconsider key structure. idk if id should be an attribute, does nesting dictionaries make it too complicated? would a lookup table be better?
 EZ - allow chart to be downloaded as file (pdf or image i dont care)
-EZ - hover over cell in grid to view coordinates
 MED - allow user to put marker in the last row they were on
 ADV - allow user to save chart and come back to site, upload working chart (including legend) and keep going/adjust. Did someone say injection attacked?!?!
 ADV - allow user to change selected colors

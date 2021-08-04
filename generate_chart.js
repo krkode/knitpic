@@ -98,7 +98,7 @@ function label_grid_cells(key){
   for (const [color, value] of Object.entries(key)){
     for (const coordinate of value["coordinates"]){
       var cell = document.getElementById(coordinate);
-      cell.innerHTML = value["id"];
+      cell.innerHTML = '<div class="tooltip">'+value["id"]+'<span class="tooltiptext">'+coordinate+'</span></div>';
     }
   }
   
