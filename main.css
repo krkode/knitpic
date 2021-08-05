@@ -41,3 +41,7 @@ table, th, td {
     visibility: visible;
     opacity: 1;
   }
+
+  .hidden {
+    display: none;
+  }
