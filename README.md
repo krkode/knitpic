@@ -2,7 +2,6 @@
 converts a picture to a knitting chart
 
 # TODO
-BUG - knit chart size slider isn't taken into account until after chart is generated so user might change it befor they upload pic and it says 50 but then when the pic is transformed its just 1
 REFACTOR - split into different pages maybe? or collapse edits article at the start so i dont have to deal with the above bug
 EZ - consider removing original image like what good is it doing there? having different pages would fix that by the way
 MED - flip work feature oooo do i generate chart again? have a hidden flipped copy that watches all the changes? becomes visible when flip is selected?

@@ -13,6 +13,7 @@ function generate_chart(event){
     generate_grid(key, function(){
       apply_color_preference(display_color.checked);
     });
+    document.getElementById("knit_chart_controllers").classList.remove("hidden");
   });
   display_color.addEventListener('change', function(){
     apply_color_preference(this.checked);

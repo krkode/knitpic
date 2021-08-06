@@ -35,7 +35,7 @@
         <canvas id="scaled_input" width=0 height=0></canvas>
       </article>
 
-      <article>
+      <article id="knit_chart_controllers" class="hidden">
         <table id="color_legend"></table>
         <input type="checkbox" id="display_color" checked>
           <label for="display_color"> Display Chart Colors</label><br>
