@@ -2,15 +2,12 @@
 converts a picture to a knitting chart
 
 # TODO
-REFACTOR - split into different pages maybe? or collapse edits article at the start so i dont have to deal with the above bug
-EZ - consider removing original image like what good is it doing there? having different pages would fix that by the way
+MED - make legend horizontal and collapsible
+EZ - flip x axis with a button u know cause when u start knitting ws the numbers change? should i not? idk
 MED - flip work feature oooo do i generate chart again? have a hidden flipped copy that watches all the changes? becomes visible when flip is selected?
 EZ - idk if this is antijavascriptic but make a class and an instance for each cell in the table so the coordinates can be correct and the color can be changed easier and set easier 
-EZ - flip x axis with a button u know cause when u start knitting ws the numbers change? should i not? idk
 ADV - browser compatibility is gonna be a problem sooner than i thought. if i use webkit then itll only work in safari and chrome. after basic functionality is done, test in a couple of browers
 MED - make the color of the cell label contrast to the cell color, like what if i have a black cell and black text?
-EZ - allow the user to turn the colors off and on in the chart as well VIA TOGGLE BUTTON with text
-(its a checkbox for now)
 EZ - lookup standard practice for global vars in javascript cause KEY is making me insecure like we neeeever resort to such vile practices
 EZ - also callback violates clean code according to the chapter i JUST read so think if there are any better solutions
 EZ - refactor: split the color stuff out into separate js file AND name everything better
@@ -29,5 +26,6 @@ ADV - allow user to change selected colors
                 - select trs will be removed from legend 
 MED - allow user to input length and width the scale pic accordingly
 ADV - allow user to input measurements/gauge
+ADV - allow user to dicate how many color variations there are, e.g. they have 10 different colors so chart can only be composed of 10 colors
 MED - display stitch as v not a square
 EZ - having a blog page with the projects made from the knitpic function would be cute. like include the generated chart and then the final product, ooo could include the pics in the read me too!
